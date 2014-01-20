@@ -6,18 +6,18 @@
 class java {
   include boxen::config
 
-  $jre_url = 'https://s3.amazonaws.com/boxen-downloads/java/jre-7u21-macosx-x64.dmg'
-  $jdk_url = 'https://s3.amazonaws.com/boxen-downloads/java/jdk-7u21-macosx-x64.dmg'
+  $jre_url = 'http://sdlc-esd.sun.com/ESD6/JSCDL/jdk/7u51-b13/jre-7u51-macosx-x64.dmg?AuthParam=1390235074_3eef9964bc12c9e711a238ff30a33360&GroupName=JSC&FilePath=/ESD6/JSCDL/jdk/7u51-b13/jre-7u51-macosx-x64.dmg&File=jre-7u51-macosx-x64.dmg&BHost=javadl.sun.com'
+  $jdk_url = 'http://sdlc-esd.sun.com/ESD6/JSCDL/jdk/7u51-b13/jdk-7u51-macosx-x64.dmg?AuthParam=1390235074_3eef9964bc12c9e711a238ff30a33360&GroupName=JSC&FilePath=/ESD6/JSCDL/jdk/7u51-b13/jdk-7u51-macosx-x64.dmg&File=jdk-7u51-macosx-x64.dmg&BHost=javadl.sun.com'
   $wrapper = "${boxen::config::bindir}/java"
-  $sec_dir = '/Library/Java/JavaVirtualMachines/jdk1.7.0_21.jdk/Contents/Home/jre/lib/security'
+  $sec_dir = '/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home/jre/lib/security'
 
   package {
-    'jre-7u21.dmg':
+    'jre-7u51.dmg':
       ensure   => present,
       alias    => 'java-jre',
       provider => pkgdmg,
       source   => $jre_url ;
-    'jdk-7u21.dmg':
+    'jdk-7u51.dmg':
       ensure   => present,
       alias    => 'java',
       provider => pkgdmg,
